@@ -1,0 +1,22 @@
+specVersion: 0.2.0
+name: manadala-stable-mint
+version: 1.0.0
+description: ''
+repository: ''
+schema:
+  file: ./schema.graphql
+network:
+  genesisHash: '0x5c562e6300954998233c9a40b6b86f3028977e6d32d0da1af207738d19f98c1b'
+  endpoint: wss://mandala.polkawallet.io
+  chaintypes:
+    file: ./types.json
+dataSources:
+  - kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleStableAssetCall
+          kind: substrate/CallHandler
+          filter:
+            module: stableAsset

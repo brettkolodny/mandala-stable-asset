@@ -14,7 +14,7 @@ async function createAccount(address: string, blockNum: bigint) {
 }
 
 export async function handleStableAssetCall(extrinsic: SubstrateExtrinsic): Promise<void> {
-    const blockNum = BigInt(extrinsic.block.block.header.toString());
+    const blockNum = BigInt(extrinsic.block.block.header.number.toString());
     const callerAddress = extrinsic.extrinsic.signer.toString();
 
     await createAccount(callerAddress, blockNum);

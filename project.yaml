@@ -20,3 +20,4 @@ dataSources:
           kind: substrate/CallHandler
           filter:
             module: stableAsset
+            success: true

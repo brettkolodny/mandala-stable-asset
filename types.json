@@ -263,7 +263,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -284,6 +286,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -348,7 +356,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -386,12 +394,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -644,7 +653,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -665,6 +676,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -729,7 +746,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -767,12 +784,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -1063,6 +1081,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -1127,7 +1151,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -1165,12 +1189,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -1462,6 +1487,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -1526,7 +1557,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -1564,12 +1595,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -1835,7 +1867,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -1856,6 +1890,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -1920,7 +1960,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -1958,12 +1998,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -2229,7 +2270,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -2250,6 +2293,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -2314,7 +2363,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -2352,12 +2401,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -2625,7 +2675,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -2646,6 +2698,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -2710,7 +2768,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -2748,12 +2806,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -3020,7 +3079,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -3041,6 +3102,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -3105,7 +3172,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -3143,12 +3210,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -3412,7 +3480,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -3433,6 +3503,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -3497,7 +3573,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -3535,12 +3611,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -3804,7 +3881,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -3825,6 +3904,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -3889,7 +3974,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -3927,12 +4012,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -4374,7 +4460,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -4395,6 +4483,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -4459,7 +4553,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -4497,12 +4591,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -4755,7 +4850,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -4776,6 +4873,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -4840,7 +4943,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -4878,12 +4981,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -5174,6 +5278,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -5238,7 +5348,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -5276,12 +5386,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -5573,6 +5684,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -5637,7 +5754,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -5675,12 +5792,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -5946,7 +6064,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -5967,6 +6087,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -6031,7 +6157,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -6069,12 +6195,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -6340,7 +6467,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -6361,6 +6490,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -6425,7 +6560,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -6463,12 +6598,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -6736,7 +6872,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -6757,6 +6895,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -6821,7 +6965,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -6859,12 +7003,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -7131,7 +7276,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -7152,6 +7299,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -7216,7 +7369,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -7254,12 +7407,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -7523,7 +7677,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -7544,6 +7700,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -7608,7 +7770,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -7646,12 +7808,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -7915,7 +8078,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -7936,6 +8101,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -8000,7 +8171,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -8038,12 +8209,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -8485,7 +8657,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -8506,6 +8680,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -8570,7 +8750,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -8608,12 +8788,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -8866,7 +9047,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -8887,6 +9070,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -8951,7 +9140,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -8989,12 +9178,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -9285,6 +9475,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -9349,7 +9545,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -9387,12 +9583,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -9684,6 +9881,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -9748,7 +9951,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -9786,12 +9989,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -10057,7 +10261,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -10078,6 +10284,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -10142,7 +10354,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -10180,12 +10392,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -10451,7 +10664,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -10472,6 +10687,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -10536,7 +10757,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -10574,12 +10795,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -10847,7 +11069,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -10868,6 +11092,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -10932,7 +11162,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -10970,12 +11200,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -11242,7 +11473,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -11263,6 +11496,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -11327,7 +11566,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -11365,12 +11604,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -11634,7 +11874,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -11655,6 +11897,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -11719,7 +11967,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -11757,12 +12005,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
@@ -12026,7 +12275,9 @@
                   "Token": "TokenSymbol",
                   "DEXShare": "(DexShare, DexShare)",
                   "ERC20": "EvmAddress",
-                  "StableAssetPoolToken": "StableAssetPoolId"
+                  "StableAssetPoolToken": "u32",
+                  "LiquidCroadloan": "u32",
+                  "ForeignAsset": "u32"
                 }
               },
               "CurrencyIdOf": "CurrencyId",
@@ -12047,6 +12298,12 @@
               },
               "TradingPair": "(CurrencyId,  CurrencyId)",
               "ChainBridgeChainId": "u8",
+              "AcalaAssetMetadata": {
+                "name": "Vec<u8>",
+                "symbol": "Vec<u8>",
+                "decimals": "u8",
+                "minimalBalance": "Balance"
+              },
               "PalletBalanceOf": "Balance",
               "CollateralAuctionItem": {
                 "refundRecipient": "AccountId",
@@ -12111,7 +12368,7 @@
               },
               "TradingPairStatus": {
                 "_enum": {
-                  "NotEnabled": "Null",
+                  "Disabled": "Null",
                   "Provisioning": "TradingPairProvisionParameters",
                   "Enabled": "Null"
                 }
@@ -12149,12 +12406,13 @@
                 "value": "Option<U128>",
                 "data": "Option<Bytes>"
               },
-              "RedeemStrategy": {
-                "_enum": {
-                  "Immediately": "Null",
-                  "Target": "EraIndex",
-                  "WaitForUnbonding": "Null"
-                }
+              "AcalaStakingLedge": {
+                "bonded": "Compact<Balance>",
+                "unlocking": "Vec<UnlockChunk>"
+              },
+              "AcalaUnlockChunk": {
+                "value": "Compact<Balance>",
+                "era": "Compact<EraIndex>"
               },
               "RelaychainAccountId": "AccountId",
               "SlashInfo": {
